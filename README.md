@@ -50,12 +50,12 @@ Worker automatically adds headers that mimic browser requests:
 
 ## Cloudflare Worker Benefits:
 
-✅ **Geo-blocking bypass** - Worker runs from Cloudflare data centers worldwide
-✅ **Fast performance** - Low latency thanks to Edge Computing
-✅ **Free tier** - Up to 100,000 requests per day for free
-✅ **Reliability** - Cloudflare infrastructure
-✅ **CORS support** - Configured for browser compatibility
-✅ **Transparent proxying** - Preserves all request and response parameters
+- ✅ **Geo-blocking bypass** - Worker runs from Cloudflare data centers worldwide
+- ✅ **Fast performance** - Low latency thanks to Edge Computing
+- ✅ **Free tier** - Up to 100,000 requests per day for free
+- ✅ **Reliability** - Cloudflare infrastructure
+- ✅ **CORS support** - Configured for browser compatibility
+- ✅ **Transparent proxying** - Preserves all request and response parameters
 
 ## Security
 
