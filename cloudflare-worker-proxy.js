@@ -38,25 +38,26 @@ async function handleRequest(request) {
     headers.delete("cf-ipcountry");
     headers.delete("cf-visitor");
 
-    // get request body
-    const body = await request.text();
+    // stream the request body instead of loading it into memory
+    const body = request.body;
 
     // make request to Groq API
     const response = await fetch(targetUrl, {
       method: "POST",
       headers,
-      body,
+      body, // pass the stream directly
     });
 
-    // copy response
-    const responseBody = await response.text();
+    // stream the response back instead of loading it into memory
+    const responseBody = response.body;
 
     // create new Response with CORS headers
     const newResponse = new Response(responseBody, {
       status: response.status,
       statusText: response.statusText,
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type":
+          response.headers.get("Content-Type") || "application/json",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Methods": "POST, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
